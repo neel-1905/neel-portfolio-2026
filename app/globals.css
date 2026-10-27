@@ -7,6 +7,7 @@
 
   --primary: #b6f36b;
   --secondary: #9b8cff;
+  --tertiary: #bc8882;
 
   --border: #2c2e30;
   --card: #181a1c;
@@ -19,6 +20,7 @@
 
   --primary: #b6f36b;
   --secondary: #9b8cff;
+  --tertiary: #bc8882;
 
   --border: #2c2e30;
   --card: #181a1c;
@@ -37,6 +39,7 @@
 
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
 
   --color-border: var(--border);
   --color-card: var(--card);
@@ -48,6 +51,27 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .stat {
+    @apply w-full flex-col gap-1 px-10 font-heading;
+
+    span {
+      @apply text-5xl font-semibold;
+    }
+
+    h2 {
+      @apply text-sm uppercase tracking-wide text-foreground-muted;
+    }
+  }
+
+  .stat:not(:last-child) {
+    @apply border-r border-border;
   }
 }
 
@@ -65,4 +89,20 @@
 
 @utility flex-center {
   @apply flex items-center justify-center;
+}
+
+@utility flex-col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility btn-primary {
+  @apply flex gap-2 items-center bg-primary text-background px-3 py-2 rounded-xl font-medium text-sm;
+}
+
+@utility btn-secondary {
+  @apply flex gap-2 items-center bg-secondary text-background px-3 py-2 rounded-xl font-medium text-sm;
+}
+
+@utility btn-tertiary {
+  @apply flex gap-2 items-center bg-card text-foreground px-3 py-2 rounded-xl border font-medium text-sm;
 }

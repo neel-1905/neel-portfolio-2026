@@ -1,9 +1,10 @@
-import { HeroSection } from "@/components/hero/hero-section";
+import { HeroSection, Stats } from "@/components/hero";
 
 function App() {
   return (
     <div>
       <HeroSection />
+      <Stats />
     </div>
   );
 }

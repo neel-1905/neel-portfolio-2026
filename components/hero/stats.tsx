@@ -1,7 +1,7 @@
 export function Stats() {
   return (
-    <div className="w-full bg-card py-10">
-      <div className="bg-card grid grid-cols-4">
+    <div className="w-full bg-card py-10 px-10">
+      <div className="bg-card grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="stat">
           <span className="text-primary">2.5+</span>
           <h2>Years Experience</h2>

@@ -4,8 +4,8 @@ import { ArrowUpRight, Mail } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="py-14 flex flex-col lg:flex-row gap-10 px-4">
-      <div className="w-full lg:w-1/2 flex flex-col gap-7">
+    <section className="py-14 flex flex-col lg:flex-row gap-20 px-7 md:px-10">
+      <div className="w-full lg:w-4/7 flex flex-col gap-7">
         <div className="bg-card rounded-full py-1.5 px-3 w-max flex items-center gap-2">
           <div className="w-2 h-2 bg-primary rounded-full"></div>
           <span className="text-2xs text-foreground-muted uppercase tracking-wider font-mono">
@@ -41,7 +41,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="w-full lg:w-1/2">
+      <div className="w-full lg:w-3/7">
         <Image
           loading="eager"
           src={IMAGES.hero}

@@ -59,7 +59,7 @@
 
 @layer components {
   .stat {
-    @apply w-full flex-col gap-1 px-10 font-heading;
+    @apply w-full flex-col gap-1 font-heading;
 
     span {
       @apply text-5xl font-semibold;
@@ -72,6 +72,10 @@
 
   .stat:not(:last-child) {
     @apply border-r border-border;
+  }
+
+  .card {
+    @apply bg-card rounded-xl p-6 border;
   }
 }
 
@@ -105,4 +109,12 @@
 
 @utility btn-tertiary {
   @apply flex gap-2 items-center bg-card text-foreground px-3 py-2 rounded-xl border font-medium text-sm;
+}
+
+@utility body-text {
+  @apply text-foreground-muted font-normal text-sm leading-6;
+}
+
+@utility section-text {
+  @apply text-foreground-muted font-medium text-lg leading-8;
 }

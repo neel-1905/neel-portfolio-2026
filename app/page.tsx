@@ -2,6 +2,7 @@ import { HeroSection, Stats } from "@/components/hero";
 
 import { AboutSection } from "@/components/about";
 import { ProjectsSection } from "@/components/projects";
+import { TechnologiesSection } from "@/components/technologies";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <HeroSection />
       <Stats />
       <AboutSection />
+      <TechnologiesSection />
       <ProjectsSection />
     </div>
   );

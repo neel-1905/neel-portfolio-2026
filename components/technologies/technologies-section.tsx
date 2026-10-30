@@ -1,8 +1,12 @@
+"use client";
+"use client";
+
 import { AppSection } from "@/components/layout/section/app-section";
 import { SectionHeader } from "@/components/layout/section/section-header";
 import { SectionContentHeading } from "@/components/layout/section/section-content-heading";
 import { TechCard, TechCardProps } from "@/components/technologies/tech-card";
 import { Layout, Server, Cloud, Wrench } from "lucide-react";
+import { StaggerContainer, StaggerItem, Reveal } from "@/components/shared";
 
 const technologies: TechCardProps[] = [
   {
@@ -48,13 +52,17 @@ export const TechnologiesSection = () => {
   return (
     <AppSection>
       <SectionHeader number="03" title="Technologies" />
-      <SectionContentHeading heading="The Tools behind the Work" />
+      <Reveal>
+        <SectionContentHeading heading="The Tools behind the Work" />
+      </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
         {technologies.map((tech) => (
-          <TechCard key={tech.title} {...tech} />
+          <StaggerItem key={tech.title}>
+            <TechCard {...tech} />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </AppSection>
   );
 };

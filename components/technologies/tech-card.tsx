@@ -1,4 +1,7 @@
+"use client";
+
 import { LucideIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 export interface TechCardProps {
   title: string;
@@ -14,10 +17,14 @@ export const TechCard = ({
   techs,
 }: TechCardProps) => {
   return (
-    <div className="card flex flex-col justify-between gap-4">
+    <motion.div
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+      className="card flex flex-col justify-between gap-4 group hover:border-primary/50 transition-colors duration-300 h-full"
+    >
       <div className="flex flex-col gap-4">
         {/* Icon */}
-        <div className="size-12 rounded-lg bg-card border flex items-center justify-center text-primary">
+        <div className="size-12 rounded-lg bg-card border flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/10 transition-all duration-300">
           <Icon size={24} />
         </div>
 
@@ -28,7 +35,7 @@ export const TechCard = ({
         </div>
       </div>
 
-      <div className="">
+      <div>
         <div className="h-px bg-border my-4" />
 
         {/* Tech Pills */}
@@ -36,13 +43,13 @@ export const TechCard = ({
           {techs.map((tech) => (
             <span
               key={tech}
-              className="px-2.5 py-1 bg-background text-foreground-muted text-xs rounded-lg border border-border"
+              className="px-2.5 py-1 bg-background text-foreground-muted text-xs rounded-lg border border-border group-hover:border-border/80 transition-colors"
             >
               {tech}
             </span>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

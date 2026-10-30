@@ -1,3 +1,5 @@
+"use client";
+
 import { AppSection } from "@/components/layout/section/app-section";
 import { SectionHeader } from "@/components/layout/section/section-header";
 import { SectionContentHeading } from "@/components/layout/section/section-content-heading";

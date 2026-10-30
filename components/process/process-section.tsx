@@ -1,36 +1,39 @@
+"use client";
+
 import { AppSection } from "@/components/layout/section/app-section";
 import { SectionHeader } from "@/components/layout/section/section-header";
 import { SectionContentHeading } from "@/components/layout/section/section-content-heading";
 import { ProcessCard, ProcessCardProps } from "./process-card";
+import { StaggerContainer, StaggerItem, Reveal } from "@/components/shared";
 
 const processSteps: ProcessCardProps[] = [
   {
     number: "1",
     title: "Discover",
     description:
-      "Deep-diving into project requirements, target audience, and core objectives to establish a robust foundation.",
-    tags: ["research", "requirements", "user flow"],
+      "Deconstruct the core challenge, clarify requirements with stakeholders, and define unambiguous success metrics and user stories.",
+    tags: ["Scope", "Constraints", "User Flow"],
   },
   {
     number: "2",
-    title: "Define",
+    title: "Architect",
     description:
-      "Structuring system architecture, data models, and setting clear functional scope and technical constraints.",
-    tags: ["scope", "constraints", "architecture"],
+      "Design relational schemas, outline API contracts, choose suitable runtime runtimes, and establish long-term code maintainability.",
+    tags: ["Data Models", "Tech Stack", "Security"],
   },
   {
     number: "3",
-    title: "Design",
+    title: "Build",
     description:
-      "Crafting intuitive, accessible interfaces and modular component systems with meticulous attention to detail.",
-    tags: ["wireframes", "components", "interactions"],
+      "Execute iterative sprints with rigorous type safety, unit coverage, modular UI components, and accessible micro-interactions.",
+    tags: ["Clean Code", "Tests", "Polish"],
   },
   {
     number: "4",
-    title: "Deliver",
+    title: "Ship & Refine",
     description:
-      "Executing rigorous testing, performance tuning, and seamless deployment with ongoing monitoring.",
-    tags: ["testing", "optimization", "deployment"],
+      "Automated canary deployments, continuous uptime telemetry, latency benchmarking, and iterative improvements driven by user analytics.",
+    tags: ["Integration", "Optimization", "Deployment"],
   },
 ];
 
@@ -38,13 +41,17 @@ export const ProcessSection = () => {
   return (
     <AppSection>
       <SectionHeader number="04" title="Process" />
-      <SectionContentHeading heading="A clear process. Thoughtful execution." />
+      <Reveal>
+        <SectionContentHeading heading="A clear process. Thoughtful execution." />
+      </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
         {processSteps.map((step) => (
-          <ProcessCard key={step.title} {...step} />
+          <StaggerItem key={step.title}>
+            <ProcessCard {...step} />
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
     </AppSection>
   );
 };
